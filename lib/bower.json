@@ -1,0 +1,27 @@
+{
+  "name": "lib",
+  "description": "dogpark app",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Stephen Szpak"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dog",
+    "park"
+  ],
+  "homepage": "https://github.com/stephenszpak/capstone-dogpark",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9"
+  }
+}
