@@ -14,7 +14,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 		$location.url("/auth");
 	}
 
-	GoogleApiFactory.textSearch();
+
 
 	let logMeIn = function(loginStuff) {
 		AuthFactory.authenticate(loginStuff).then(function(didLogin) {

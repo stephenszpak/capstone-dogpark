@@ -26,7 +26,9 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
 	});
 });
 
-app.config(function($routeProvider) {
+
+
+app.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 	$routeProvider
 		.when('/auth', {
 			templateUrl: 'partials/auth.html',
@@ -41,4 +43,10 @@ app.config(function($routeProvider) {
 			controller: 'SearchCtrl'
 		})
 		.otherwise('auth');
+
+		uiGmapGoogleMapApiProvider.configure({
+	        key: 'AIzaSyDTYUC9Vs2Luy8azl5p9qcgnWf2XlVuiRM',
+	        v: '3.20', //defaults to latest 3.X anyhow
+	        libraries: 'weather,geometry,visualization'
+    	});
 });
