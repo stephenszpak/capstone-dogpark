@@ -1,14 +1,13 @@
 "use strict";
 
-app.factory("GoogleApiFactory", function($q, $http) {
+app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG) {
 
 
-	var textSearch = function() {
+	var textSearch = function(userInput) {
 		return $q((resolve, reject) => {
-			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+Nasvhille&key=AIzaSyDTYUC9Vs2Luy8azl5p9qcgnWf2XlVuiRM`)
+			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+${userInput}&key=${FIREBASE_CONFIG.apiKey}`)
 			.success(function(response) {
 				resolve(response);
-				console.log("hey", response);
 			})
 			.error(function(errorResponse) {
 				reject(errorResponse);
@@ -16,8 +15,9 @@ app.factory("GoogleApiFactory", function($q, $http) {
 		});
 	};
 
+
 	return{
-		textSearch: textSearch,
+		textSearch: textSearch
 	};
 
 });

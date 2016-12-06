@@ -1,12 +1,36 @@
 {
 	"users": {
-		"user1":{
+		"user1": {
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
 			"username": "a"
 		},
-		"user2":{
-			"uid": "",
+		"user2": {
+			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
 			"username": "b"
+		}
+	},
+	"profiles": {
+		"profile1": {
+			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
+			"dogname": "Elanore",
+			"ownername": "Stephen",
+			"currentlocation": "Shelby Dog Park"
+		},
+		"profile2": {
+			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
+			"dogname": "Captian Gilbert",
+			"ownername": "Richard Cheese",
+			"currentlocation": "Shelby Dog Park"
+		}
+	},
+	"favorites": {
+		"favorite1": {
+			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
+			"placeid": "ChIJIQzftrNmZIgRcgx99a8_f_s"
+		},
+		"favorite2": {
+			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
+			"placeid": "ChIJ4b8piI1mZIgRaLm5_PZJkOA"
 		}
 	}
 }

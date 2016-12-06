@@ -14,7 +14,10 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 		$location.url("/auth");
 	}
 
-
+	 $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
 
 	let logMeIn = function(loginStuff) {
 		AuthFactory.authenticate(loginStuff).then(function(didLogin) {
@@ -23,7 +26,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 			$rootScope.user = userCreds;
 			$scope.login = {};
 			$scope.register = {};
-			$location.url("/userprofile");
+			$location.url("/search");
 		});
 	};
 

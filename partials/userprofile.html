@@ -1,2 +1,47 @@
-<h1>hey</h1>
 
+<div class="col-xs-6 col-xs-offset-3">
+	<div class="row">
+		<button class="btn btn-info col-xs-6" ng-click="setCreateUserProfileContainer()">Create Profile</button>
+		<button class="btn btn-success col-xs-6" ng-click="setUserProfileContainer()">View Profile</button>
+	</div>
+
+<form ng-show="createUserProfile">
+	<div class="form-group">
+		<label>Dog's Name</label>
+		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Puppers name" ng-model="newProfile.dogname" required autofocus>	
+	</div>
+	<div class="form-group">
+		<label>Hoomans name</label>
+		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Hoomans name" ng-model="newProfile.ownername" required autofocus>	
+	</div>
+	<div class="form-group">
+		<label>Current Park</label>
+		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Current Park" ng-model="newProfile.currentlocation" required autofocus>	
+	</div>
+	<div class="form-group">
+		<label>Fav Park</label>
+		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Fav Park" ng-model="newProfile.favdogpark" required autofocus>	
+	</div>
+	<div class="form-group">
+		<label>Friends</label>
+		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Friends" required autofocus>	
+	</div>
+	<button ng-click="addProfile()">OK</button>
+</form>
+
+
+
+
+
+<form ng-show="showUserProfile">
+	<div class="list-group-item">
+	    <h3 class="text-center">doggy: {{selectedUser.dogname}}</h3>
+	    <h3 class="text-center">hooman: {{selectedUser.ownername}}</h3>
+	    <h3 class="text-center">fav park: {{selectedUser.favdogpark}}</h3>
+	    <h3 class="text-center">current park: {{selectedUser.currentlocation}}</h3>
+	    <h3 class="text-center">Frands: {{selectedUser.fid}}</h3> 
+	</div>
+</form>
+
+
+</div>

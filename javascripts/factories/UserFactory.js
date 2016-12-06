@@ -29,12 +29,14 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 					users.push(userObject[key]);
 				});
 				resolve(users[0]);
+				console.log("hey", users);
 			})
 			.error(function(error) {
 				reject(error);
 			});
 		});
 	};
+
 
 	return{
 		addUser:addUser,

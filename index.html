@@ -4,24 +4,32 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dog Parks</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body ng-app="dogpark">
+<div ng-include="'./partials/navbar.html'"></div>
 
-	<div class="row">
 		<div ng-view></div>
-	</div>
-</div>
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript" src="/lib/bower_components/lodash/dist/lodash.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="/lib/bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
 <script type="text/javascript" src="/lib/bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
-
 
 <script type="text/javascript" src="/javascripts/app.js"></script>
 <script type="text/javascript" src="/javascripts/AppConstants.js"></script>
@@ -30,7 +38,10 @@
 <script type="text/javascript" src="/javascripts/factories/AuthFactory.js"></script>
 <script type="text/javascript" src="/javascripts/factories/UserFactory.js"></script>
 <script type="text/javascript" src="/javascripts/factories/GoogleApiFactory.js"></script>
-
+<script type="text/javascript" src="/javascripts/factories/UserProfileFactory.js"></script>
+ 
+<script type="text/javascript" src="/javascripts/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="/javascripts/controllers/GoogleApiCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/AuthCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/UserProfileCtrl.js"></script>
 <script type="text/javascript" src="/javascripts/controllers/SearchCtrl.js"></script>
