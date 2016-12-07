@@ -27,7 +27,7 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
 
 
 
-app.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
+app.config(function($routeProvider) {
 	$routeProvider
 		.when('/auth', {
 			templateUrl: 'partials/auth.html',
@@ -49,10 +49,4 @@ app.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 			resolve: {isAuth}
 		})
 		.otherwise('/auth');
-
-		uiGmapGoogleMapApiProvider.configure({
-	        key: 'AIzaSyClnSLwxEp10cyeGQjPE88Ueof8rrmZd7c',
-	        v: '3.26', //defaults to latest 3.X anyhow
-	        libraries: 'places,weather,geometry,visualization'
-    	});
 });

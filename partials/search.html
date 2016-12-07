@@ -16,10 +16,9 @@
             <div class="card-content white-text">
               <span class="card-title">{{dog.name}}</span>
 				<div>{{dog.formatted_address}}</div>
-				<div>{{dog.rating}}</div>
             </div>
             <div class="card-action">
-              <a href="#">Add to Favorites!</a>
+              <a href="#" ng-click="addFavorite(dog)">Add to Favorites!</a>
               <a href="#">Share!</a>
             </div>
           </div>

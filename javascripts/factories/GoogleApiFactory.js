@@ -1,11 +1,11 @@
 "use strict";
 
-app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG) {
+app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG, GOOGLE) {
 
 
-	var textSearch = function(userInput) {
+	let textSearch = function(userInput) {
 		return $q((resolve, reject) => {
-			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+${userInput}&key=${FIREBASE_CONFIG.apiKey}`)
+			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+${userInput}&key=${GOOGLE.apiKey}`)
 			.success(function(response) {
 				resolve(response);
 			})
@@ -15,9 +15,27 @@ app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG) {
 		});
 	};
 
+	let postNewFav = function(newFav) {
+		return $q((resolve, reject) => {
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/favorites.json`,
+				JSON.stringify ({
+					name: newFav.name,
+					address: newFav.formatted_address,
+					uid: newFav.uid
+				})
+			)
+			.success(function(postResponse) {
+				resolve(postResponse);
+			})
+			.error(function(postError){
+				reject(postError);
+			});
+		});
+	};
 
 	return{
-		textSearch: textSearch
+		textSearch: textSearch,
+		postNewFav: postNewFav
 	};
 
 });
