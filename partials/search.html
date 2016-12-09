@@ -1,0 +1,39 @@
+<div class="container" ng-controller="SearchCtrl">
+	<div>
+		<h2>bark bark woof woof</h2>
+	            <input type="text" placeholder="Search" ng-model="userInput">
+	            
+	                <button ng-click="showDogPark(userInput)">
+	                    BUTTS
+	                </button>
+	           
+	        </div>
+
+
+<div class="row" ng-repeat="dog in result">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{dog.name}}</span>
+				<div>{{dog.formatted_address}}</div>
+            </div>
+            <div class="card-action">
+              <a href="#" ng-click="addFavorite(dog)">Add to Favorites!</a>
+              <a href="#">Share!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	
+
+
+</div>
+
+
+
+
+
+
+
+<!-- <a ng-href="#/users/profile/{{profile.id}}"><button>Go To Profile</button></a> -->

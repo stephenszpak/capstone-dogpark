@@ -28,5 +28,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^1.2.1",
     "matchdep": "^1.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.2"
   }
 }
