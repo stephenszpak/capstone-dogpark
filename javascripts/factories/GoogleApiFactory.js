@@ -33,6 +33,8 @@ app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG, GOOGLE) {
 		});
 	};
 
+	
+
 	return{
 		textSearch: textSearch,
 		postNewFav: postNewFav

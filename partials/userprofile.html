@@ -1,47 +1,50 @@
-
-<div class="col-xs-6 col-xs-offset-3">
-	<div class="row">
-		<button class="btn btn-info col-xs-6" ng-click="setCreateUserProfileContainer()">Create Profile</button>
-		<button class="btn btn-success col-xs-6" ng-click="setUserProfileContainer()">View Profile</button>
-	</div>
-
-<form ng-show="createUserProfile">
-	<div class="form-group">
-		<label>Dog's Name</label>
-		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Puppers name" ng-model="newProfile.dogname" required autofocus>	
-	</div>
-	<div class="form-group">
-		<label>Hoomans name</label>
-		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Hoomans name" ng-model="newProfile.ownername" required autofocus>	
-	</div>
-	<div class="form-group">
-		<label>Current Park</label>
-		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Current Park" ng-model="newProfile.currentlocation" required autofocus>	
-	</div>
-	<div class="form-group">
-		<label>Fav Park</label>
-		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Fav Park" ng-model="newProfile.favdogpark" required autofocus>	
-	</div>
-	<div class="form-group">
-		<label>Friends</label>
-		<input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Friends" required autofocus>	
-	</div>
-	<button ng-click="addProfile()">OK</button>
-</form>
-
-
-
-
-
-<form ng-show="showUserProfile">
-	<div class="list-group-item">
-	    <h3 class="text-center">doggy: {{selectedUser.dogname}}</h3>
-	    <h3 class="text-center">hooman: {{selectedUser.ownername}}</h3>
-	    <h3 class="text-center">fav park: {{selectedUser.favdogpark}}</h3>
-	    <h3 class="text-center">current park: {{selectedUser.currentlocation}}</h3>
-	    <h3 class="text-center">Frands: {{selectedUser.fid}}</h3> 
-	</div>
-</form>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col s3">
+        <a class="waves-effect waves-light btn" data-target="modal3">Add User Profile</a>
+            <h4>user info</h4>
+            <div class="row">
+                <ul ng-repeat="butts in profile">
+                	<img src="images/elanore.jpg" alt="" class="circle responsive-img doggo">
+	                <li>Doggo: {{butts.dogname}}</li>
+	                <li>Hooman: {{butts.ownername}}</li>
+	                <li>Favs: {{butts.currentlocation}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col s9">
+            <h4>Favorite Parks</h4>
+            <div class="row" ng-repeat="favorites in favoriteList">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{favorites.name}}</span>
+                        <div>{{favorites.address}}</div>
+                         <a href ng-click="deleteFavorite(favorites.id)"><i class="small material-icons">delete</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- add user profile modal -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+      <div class="row">
+      	<form>
+          <div class="input-field inline">
+            <input id="dogname" type="text" ng-model="newProfile.dogname">
+            <label for="dogname" data-error="wrong" data-success="right">Email</label>
+          </div>
+          <div class="input-field inline">
+            <input id="ownername" type="text" ng-model="newProfile.ownername">
+            <label for="ownername">Hooman</label>
+          </div>
+          <div class="input-field inline">
+            <input id="currentlocation" type="text" ng-model="newProfile.currentlocation">
+            <label for="currentlocation">Current Location</label>
+          </div>
+    	</form>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addNewProfile()">Add Profile</a>
+    </div>
+  </div>

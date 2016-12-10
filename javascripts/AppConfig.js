@@ -33,7 +33,7 @@ app.config(function($routeProvider) {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
 		})
-		.when('/users/profile', {
+		.when('/profile', {
 			templateUrl: 'partials/userprofile.html',
 			controller: 'UserProfileCtrl',
 			resolve: {isAuth}
@@ -41,7 +41,7 @@ app.config(function($routeProvider) {
 		.when('/search', {
 			templateUrl: 'partials/search.html',
 			controller: "SearchCtrl",
-			
+			resolve: {isAuth}
 		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
