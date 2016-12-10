@@ -29,7 +29,7 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 					users.push(userObject[key]);
 				});
 				resolve(users[0]);
-				console.log("hey", users);
+				console.log("current user", users);
 			})
 			.error(function(error) {
 				reject(error);

@@ -227,7 +227,7 @@ $k-right-ear: (
   animation: squiggly-anim 0.3s infinite;
   height: 60vmin;
   width: 84vmin;
-  
+
   @media screen and (max-width: 400px) {
     // Chrome for Android chokes
     animation: none;
@@ -260,7 +260,7 @@ div:before, div:after {
 
 .head {
   animation: head $duration none infinite;
-  position: relative;
+  position: absolute;
   height: 45%;
   width: 58%;
   left: 34%;
@@ -693,20 +693,15 @@ div:before, div:after {
 }
 
 html, body {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $color-bg;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+	background-color: #A8C7DB;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
   position: relative;
+}
+
+img {
+	height: 150px;
+	width: 150px;
 }
