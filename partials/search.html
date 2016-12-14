@@ -1,38 +1,24 @@
 <div class="container" ng-controller="SearchCtrl">
-
-	<div class="row">
-		<h2>bark bark woof woof</h2>
-	            <input type="text" placeholder="Search" ng-model="userInput">
-	            
-	                <button ng-click="showDogPark(userInput)">
-	                    BUTTS
-	                </button>
-	           
-	        </div>
-
-
-<div class="row"  ng-repeat="dog in result">
-        <div class="col s12 m5">
-        <div class="card-panel teal">
-        <span class="card-title">{{dog.name}}</span>
-
-          <span class="white-text">{{dog.formatted_address}}
-          </span>
-          <a href ng-click="addFavorite(dog)">Add to Favorites!</a>
+	<!-- dog park search field -->
+    <div class="row">
+        <form>
+            <div class="input-field col s6">
+            <i class="material-icons prefix" ng-click="showDogPark(userInput)">search</i>
+            <input id="icon_prefix" type="text" ng-model="userInput">
+            <label for="icon_prefix">Find a Dog Park near you</label>
+            </div>
+        </form>
+    </div>
+    <!-- dog park cards/list -->
+    <div class="row">
+    <div ng-repeat="dogpark in result">
+        <div class="col s3 offset-s1">
+            <div class="carde-size card-panel grey darken-2">
+                <span class="card-title">{{dogpark.name}}</span>
+                <span class="white-text">{{dogpark.formatted_address}}</span>
+                <a href ng-click="addFavorite(dogpark)"><i class="material-icons">add</i></a>
+            </div>
         </div>
-        
-      </div>
-          
-            
-      </div>
-
-	
-
-
+    </div>
+    </div>
 </div>
-
-
-
-
-
-<!-- <a ng-href="#/users/profile/{{profile.id}}"><button>Go To Profile</button></a> -->

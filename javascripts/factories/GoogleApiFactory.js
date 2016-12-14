@@ -5,7 +5,7 @@ app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG, GOOGLE) {
 
 	let textSearch = function(userInput) {
 		return $q((resolve, reject) => {
-			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+in+${userInput}&key=${GOOGLE.apiKey}`)
+			$http.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=dog+parks+${userInput}&key=${GOOGLE.apiKey}`)
 			.success(function(response) {
 				resolve(response);
 			})
@@ -21,6 +21,8 @@ app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG, GOOGLE) {
 				JSON.stringify ({
 					name: newFav.name,
 					address: newFav.formatted_address,
+					location: newFav.geometry,
+					place_id: newFav.id,
 					uid: newFav.uid
 				})
 			)

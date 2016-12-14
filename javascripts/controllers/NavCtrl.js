@@ -7,7 +7,7 @@ app.controller("NavCtrl", function($scope){
 			url:"#/search"
 		},
 		{
-			name: "Profile",
+			name: "Favorites",
 			url: "#/profile"
 		},
 		{
@@ -15,6 +15,4 @@ app.controller("NavCtrl", function($scope){
 			url:"#/logout"
 		}
 	];
-
-	
 });
