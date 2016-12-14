@@ -27,7 +27,7 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
 
 
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $httpProvider) {
 	$routeProvider
 		.when('/auth', {
 			templateUrl: 'partials/auth.html',
@@ -49,4 +49,7 @@ app.config(function($routeProvider) {
 			resolve: {isAuth}
 		})
 		.otherwise('/auth');
+
+		$httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });

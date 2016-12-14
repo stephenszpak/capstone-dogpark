@@ -1,104 +1,53 @@
 <div class="container">
-  <div class="row">
-    <!-- login button -->
-    <div class="col s12 m4 l2"><a class="waves-effect waves-light btn teal lighten-3" data-target="modal2">Login</a></div>
-    <!-- husky animation -->
-    <div class="col s12 m6 l8">
-      <div class="husky">
-        <div class="mane">
-          <div class="coat"></div>
-        </div>
-        <div class="body">
-          <div class="head">
-            <div class="ear"></div>
-            <div class="ear"></div>
-            <div class="face">
-              <div class="eye"></div>
-              <div class="eye"></div>
-              <div class="nose"></div>
-              <div class="mouth">
-                <div class="lips"></div>
-                <div class="tongue"></div>
-              </div>
-            </div>
-          </div>
-          <div class="torso"></div>
-        </div>
-        <div class="legs">
-          <div class="front-legs">
-            <div class="leg"></div>
-            <div class="leg"></div>
-          </div>
-          <div class="hind-leg">
-          </div>
-        </div>
-        <div class="tail">
-          <div class="tail">
-            <div class="tail">
-              <div class="tail">
-                <div class="tail">
-                  <div class="tail">
-                    <div class="tail">
+    <div class="row">
+        <!-- register button -->
+        <div class="register-btn vt-font-style"><a class="waves-effect waves-light btn grey darken-2" data-target="modal1">Register</a></div>
+        <!-- register modal-->
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <form class="col s6">
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="email" type="email" ng-model="register.email" class="validate">
+                            <label for="email" data-error="wrong" data-success="right">Email</label>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="password" type="password" ng-model="register.password" class="validate">
+                            <label for="password" data-error="wrong" data-success="right">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="password" type="text" ng-model="register.username">
+                            <label>Username</label>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
+            <div class="modal-footer">
+                <a href="#!" ng-click="registerUser(register)" class="modal-action modal-close waves-effect waves-green btn-flat">Register!</a>
+            </div>
         </div>
-      </div>
+        <!-- login -->
+        <div class="login-field">
+            <form class="col s4">
+                <div class="row">
+                    <div class="input-field">
+                        <input id="email" type="email" ng-model="login.email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <input id="password" type="password" ng-model="login.password" class="validate">
+                        <label for="password" data-error="wrong" data-success="right">Password</label>
+                    </div>
+                    <!-- login button -->
+                    <div class="col s12 m4 l2 vt-font-style"><a class="waves-effect waves-light btn grey darken-2" ng-click="loginUser(login)">Login</a></div>
+                </div>
+            </form>
+        </div>
     </div>
-    <!-- register button -->
-    <div class="col s12 m4 l2"><a class="waves-effect waves-light btn teal lighten-3" data-target="modal1">Register</a></div>
-    <!-- register modal-->
-    <div id="modal1" class="modal modal-fixed-footer">
-      <div class="modal-content">
-        <form class="col s6">
-          <div class="row">
-            <div class="input-field">
-              <input id="email" type="email" ng-model="register.email" class="validate">
-              <label for="email" data-error="wrong" data-success="right">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field">
-              <input id="password" type="password" ng-model="register.password" class="validate">
-              <label for="password" data-error="wrong" data-success="right">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field">
-              <input id="password" type="text" ng-model="register.username">
-              <label>Username</label>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" ng-click="registerUser(register)" class=" modal-action modal-close waves-effect waves-green btn-flat">Register!</a>
-      </div>
-    </div>
-    <!-- login modal -->
-    <div id="modal2" class="modal modal-fixed-footer">
-      <div class="modal-content">
-        <form class="col s6">
-          <div class="row">
-            <div class="input-field">
-              <input id="email" type="email" ng-model="login.email" class="validate">
-              <label for="email" data-error="wrong" data-success="right">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field">
-              <input id="password" type="password" ng-model="login.password" class="validate">
-              <label for="password" data-error="wrong" data-success="right">Password</label>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" ng-click="loginUser(login)" class=" modal-action modal-close waves-effect waves-green btn-flat">Login!</a>
-      </div>
-    </div>
-  </div>
 </div>

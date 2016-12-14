@@ -14,13 +14,13 @@
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
 			"dogname": "Elanore",
 			"ownername": "Stephen",
-			"currentlocation": "Shelby Dog Park"
+			"isCurrent": false
 		},
 		"profile2": {
 			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
 			"dogname": "Captian Gilbert",
 			"ownername": "Richard Cheese",
-			"currentlocation": "Shelby Dog Park"
+			"isCurrent": false
 		}
 	},
 	"favorites": {

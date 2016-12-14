@@ -15,7 +15,9 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, GoogleApiFa
 		dog.uid = $rootScope.user.uid;
 		GoogleApiFactory.postNewFav(dog).then(function(data) {
 			console.log('single doggo', dog);
+			console.log('photo doggo', dog.photos[0].html_attributions[0]);
 			$location.url('/search');
 		});
 	};
+
 });

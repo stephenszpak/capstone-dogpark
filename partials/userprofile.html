@@ -1,31 +1,47 @@
 <div class="container">
     <div class="row">
-        <div class="col s3">
-        <a class="waves-effect waves-light btn" data-target="modal3">Add User Profile</a>
-            <h4>user info</h4>
-            <div class="row">
-                <ul ng-repeat="butts in profile">
-                	<img src="images/elanore.jpg" alt="" class="circle responsive-img doggo">
-	                <li>Doggo: {{butts.dogname}}</li>
-	                <li>Hooman: {{butts.ownername}}</li>
-	                <li>Favs: {{butts.currentlocation}}</li>
-                </ul>
-            </div>
+        <div class="col s4 offset-1 user-profile grey darken-2">
+            <ul ng-repeat="user in profile">
+                <li>Doggo: {{user.dogname}}</li>
+                <li>Hooman: {{user.ownername}}</li>
+            </ul>
         </div>
-        <div class="col s9">
-            <h4>Favorite Parks</h4>
-            <div class="row" ng-repeat="favorites in favoriteList">
-                <div class="card blue-grey darken-1">
+    </div>
+
+    <div class="row">
+        <div ng-repeat="favorites in favoriteList">
+            <div class="col s4">
+                <div class="carde-size card grey darken-2">
                     <div class="card-content white-text">
-                        <span class="card-title">{{favorites.name}}</span>
+                        <span class="card-title"><strong>{{favorites.name}}</strong></span>
                         <div>{{favorites.address}}</div>
-                         <a href ng-click="deleteFavorite(favorites.id)"><i class="small material-icons">delete</i></a>
+                        <div>
+                            <a href="#"
+                            socialshare
+                            socialshare-provider="twitter"
+                            socialshare-text="Hey come meet me and pupper at {{favorites.name}}!"
+                            socialshare-hashtags="dogparks, imcool"
+                            socialshare-url="dog">
+                                <i class="small material-icons">announcement</i>
+                            </a>
+                            <a href="#"
+                            socialshare
+                            socialshare-provider="email"
+                            socialshare-subject="Come hang out at {{favorites.name}}"
+                            socialshare-body="I'm at {{favorites.name}} currently, come bring your pup.  The address is {{favorites.address}}">
+                                <i class="small material-icons">email</i>
+                            </a>
+                            <a href ng-click="deleteFavorite(favorites.id)">
+                                <i class="small material-icons">delete</i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<a class="waves-effect waves-light btn" data-target="modal3">Add User Profile</a>
 <!-- add user profile modal -->
 <div id="modal3" class="modal">
     <div class="modal-content">
@@ -39,12 +55,10 @@
             <input id="ownername" type="text" ng-model="newProfile.ownername">
             <label for="ownername">Hooman</label>
           </div>
-          <div class="input-field inline">
-            <input id="currentlocation" type="text" ng-model="newProfile.currentlocation">
-            <label for="currentlocation">Current Location</label>
-          </div>
     	</form>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addNewProfile()">Add Profile</a>
+      <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addNewProfile()">Add Profile</a>
     </div>
   </div>
+</div>
+</div>
