@@ -38,6 +38,26 @@ app.factory("UserProfileFactory", function($q, $http, FIREBASE_CONFIG) {
 		});
 	};
 
+	let editProfile = function(editProfile) {
+		return $q((resolve, reject) => {
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/profiles/${editProfile}.json`,
+				JSON.stringify ({
+					dogname: editProfile.dogname,
+					ownername: editProfile.ownername,
+					isCurrent: editProfile.isCurrent,
+					uid: editProfile.uid
+				})
+			)
+			.success(function(editResponse) {
+				console.log(editResponse);
+				resolve(editResponse);
+			})
+			.error(function(editError){
+				reject(editError);
+			});
+		});
+	};
+
 
 	let getFavorites = function (userId) {
 		return $q((resolve, reject) => {
@@ -68,31 +88,11 @@ app.factory("UserProfileFactory", function($q, $http, FIREBASE_CONFIG) {
 		});
 	};
 
-	let currentPark = function(currentLocation) {
-		return $q((resolve, reject) => {
-			$http.put(`${FIREBASE_CONFIG.databaseURL}/profiles/${currentLocation.id}.json`,
-				JSON.stringify({
-					dogname: currentLocation.dogname,
-					ownername: currentLocation.ownername,
-					isCurrent: currentLocation.isCurrent,
-					uid: currentLocation.uid
-				})
-			)
-			.success(function(currentResponse) {
-				console.log("currentpark", currentResponse);
-				resolve(currentResponse);
-			})
-			.error(function(currentError) {
-				reject(currentError);
-			});
-		});
-	};
-
 	return {
 		getUserProfile: getUserProfile,
 		postUserProfile: postUserProfile,
 		getFavorites: getFavorites,
 		deleteFavorite: deleteFavorite,
-		currentPark: currentPark
+		editProfile: editProfile
 	};
 });

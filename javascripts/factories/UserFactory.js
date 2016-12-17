@@ -7,7 +7,8 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/users.json`,
 				JSON.stringify({
 					uid: authData.uid,
-					username: authData.username
+					username: authData.username,
+					dogname: authData.dogname
 				})
 			)
 			.success(function(storeUserSuccess) {

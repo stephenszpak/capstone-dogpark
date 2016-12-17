@@ -43,6 +43,16 @@ app.config(function($routeProvider, $httpProvider) {
 			controller: "SearchCtrl",
 			resolve: {isAuth}
 		})
+		.when('/profile/new', {
+			templateUrl: 'partials/create-profile.html',
+			controller: 'UserProfileCtrl',
+			resolve: {isAuth}
+		})
+		.when('/profile/edit', {
+			templateUrl: 'partials/create-profile.html',
+			controller: 'UserProfileCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl',

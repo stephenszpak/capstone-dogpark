@@ -1,12 +1,14 @@
 <div class="container">
     <div class="row">
-        <div class="col s4 offset-1 user-profile grey darken-2">
-            <ul ng-repeat="user in profile">
+        <div class="col s4 offset-1 grey darken-2">
+            <ul>
+                <img class='circle responsive-img elly' src="images/elanore.jpg">
                 <li>Doggo: {{user.dogname}}</li>
-                <li>Hooman: {{user.ownername}}</li>
+                <li>Hooman: {{user.username}}</li>
             </ul>
         </div>
     </div>
+
 
     <div class="row">
         <div ng-repeat="favorites in favoriteList">
@@ -41,24 +43,5 @@
         </div>
     </div>
 </div>
-<a class="waves-effect waves-light btn" data-target="modal3">Add User Profile</a>
-<!-- add user profile modal -->
-<div id="modal3" class="modal">
-    <div class="modal-content">
-      <div class="row">
-      	<form>
-          <div class="input-field inline">
-            <input id="dogname" type="text" ng-model="newProfile.dogname">
-            <label for="dogname" data-error="wrong" data-success="right">Email</label>
-          </div>
-          <div class="input-field inline">
-            <input id="ownername" type="text" ng-model="newProfile.ownername">
-            <label for="ownername">Hooman</label>
-          </div>
-    	</form>
-    <div class="modal-footer">
-      <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addNewProfile()">Add Profile</a>
-    </div>
-  </div>
-</div>
-</div>
+         
+

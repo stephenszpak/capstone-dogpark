@@ -4,7 +4,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 	$scope.loginContainer = true;
 	$scope.registerContainer = false;
 	$scope.login = {
-		email: "a@a.com",
+		email: "s@s.com",
 		password: "123123"
 	};
 

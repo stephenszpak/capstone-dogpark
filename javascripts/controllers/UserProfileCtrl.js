@@ -1,8 +1,7 @@
 "use strict";
 
-app.controller('UserProfileCtrl', function($scope, $rootScope, $location, UserProfileFactory) {
+app.controller('UserProfileCtrl', function($scope, $rootScope, $location, UserProfileFactory, UserFactory) {
 	$scope.favoriteList = {};
-	$scope.profile = {};
 	$scope.newProfile = {};
 
 	let showFavorites = function() {
@@ -14,17 +13,7 @@ app.controller('UserProfileCtrl', function($scope, $rootScope, $location, UserPr
 
     showFavorites();
 
-    let showProfile = function() {
-    	UserProfileFactory.getUserProfile($rootScope.user.uid).then(function(data) {
-    		console.log("profile", data);
-    		$scope.profile = data;
-
-    	});
-    };
-
-    showProfile();
-
-    $scope.addNewProfile = function() {
+    $scope.addNewFriend = function() {
     	$scope.newProfile.uid = $rootScope.user.uid;
 		UserProfileFactory.postUserProfile($scope.newProfile).then(function(data) {
 			console.log("new profile", data);
@@ -37,11 +26,13 @@ app.controller('UserProfileCtrl', function($scope, $rootScope, $location, UserPr
 		});
 	};
 
-	$scope.showCurrentLocation = function(currentParkId) {
-		UserProfileFactory.currentPark(currentParkId).then(function(data) {
-			console.log('current location', data);
+	$scope.addNewProfile = function() {
+		UserProfileFactory.editProfile($scope.newProfile).then(function(response) {
+			console.log("cunt", response);
+			$scope.newProfile = {};
 		});
 	};
+
 
 	//modal
 	$(document).ready(function(){
