@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "users": {
+      ".indexOn": "uid"
+    },
+    "profiles": {
+      ".indexOn": "uid"
+    },
+    "favorites": {
+      ".indexOn": "uid"
+    }
+  }
+}

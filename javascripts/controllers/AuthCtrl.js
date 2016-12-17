@@ -13,7 +13,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 		$rootScope.user = {};
 		$location.url("/auth");
 	}
-
+	console.log("hey", $rootScope.user.dogname);
 	$(document).ready(function(){
 		// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 		$('.modal').modal();
