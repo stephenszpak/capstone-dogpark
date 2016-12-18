@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('UserProfileCtrl', function($scope, $rootScope, $routeParams, $location, FavoriteFactory, UserFactory) {
+app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParams, $location, FavoriteFactory, UserFactory) {
 	$scope.favoriteList = {};
 	$scope.selectedFavorite = {};
 
@@ -14,23 +14,10 @@ app.controller('UserProfileCtrl', function($scope, $rootScope, $routeParams, $lo
 
     showFavorites();
 
-    $scope.selectedFavorite = {};
-	let favId = $routeParams.id;
-	console.log("route params", favId);
-
-	FavoriteFactory.getSingleFavorite(favId).then(function(data) {
-		console.log("data", data.id);
-		data.id = favId;
-		$scope.selectedFavorite = data;
-	});
-
-
 	$scope.deleteFavorite = function(favoriteId) {
 		FavoriteFactory.deleteFavorite(favoriteId).then(function(response) {
 			showFavorites();
 		});
 	};
 
-
-	
 });

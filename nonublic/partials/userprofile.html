@@ -1,10 +1,21 @@
 <div class="container">
     <div class="row">
+        <div class="col s4 offset-1 grey darken-2">
+            <ul>
+                <img class='circle responsive-img elly' src="images/elanore.jpg">
+                <li>Doggo: {{user.dogname}}</li>
+                <li>Hooman: {{user.username}}</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="row">
         <div ng-repeat="favorites in favoriteList">
             <div class="col s4">
                 <div class="carde-size card grey darken-2">
                     <div class="card-content white-text">
-                        <span class="card-title"><a href="#/favorite/details/{{favorites.id}}">{{favorites.name}}</a></span>
+                        <span class="card-title"><strong>{{favorites.name}}</strong></span>
                         <div>{{favorites.address}}</div>
                         <div>
                             <a href="#"
@@ -31,4 +42,6 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
+         
+

@@ -8,14 +8,11 @@ app.controller("NavCtrl", function($scope){
 		},
 		{
 			name: "Favorites",
-			url: "#/favorite"
+			url: "#/profile"
 		},
 		{
 			name:"Logout",
 			url:"#/logout"
-		},
-		{	name:"Contacts",
-			url:"#/contacts"
-		}		
+		}
 	];
 });

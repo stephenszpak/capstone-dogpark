@@ -33,9 +33,9 @@ app.config(function($routeProvider, $httpProvider) {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
 		})
-		.when('/favorite', {
-			templateUrl: 'partials/favorite.html',
-			controller: 'FavoriteCtrl',
+		.when('/profile', {
+			templateUrl: 'partials/userprofile.html',
+			controller: 'UserProfileCtrl',
 			resolve: {isAuth}
 		})
 		.when('/search', {
@@ -43,16 +43,16 @@ app.config(function($routeProvider, $httpProvider) {
 			controller: "SearchCtrl",
 			resolve: {isAuth}
 		})
-		.when('/favorite/details/:id', {
-			templateUrl: 'partials/favorite-details.html',
-			controller: 'FavoriteDetailsCtrl',
+		.when('/profile/new', {
+			templateUrl: 'partials/create-profile.html',
+			controller: 'UserProfileCtrl',
 			resolve: {isAuth}
 		})
-		.when('/contacts', {
-		      templateUrl: 'partials/contacts.html',
-		      controller: 'ContactCtrl',
-		      resolve: {isAuth}
-    	})
+		.when('/profile/edit', {
+			templateUrl: 'partials/create-profile.html',
+			controller: 'UserProfileCtrl',
+			resolve: {isAuth}
+		})
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl',

@@ -1,63 +1,6 @@
 "use strict";
 
-app.factory("UserProfileFactory", function($q, $http, FIREBASE_CONFIG) {
-
-	// let getUserProfile = function(user) {
-	// 	return $q((resolve, reject) => {
-	// 		$http.get(`${FIREBASE_CONFIG.databaseURL}/profiles.json?orderBy="uid"&equalTo="${user}"`)
-	// 		.success(function(response) {
-	// 			let profiles = [];
-	// 			Object.keys(response).forEach(function(key) {
-	// 				response[key].id = key;
-	// 				profiles.push(response[key]);
-	// 			});
-	// 			resolve(profiles);
-	// 		})
-	// 		.error(function(getSingleError) {
-	// 			reject(getSingleError);
-	// 		});
-	// 	});
-	// };
-	
-	// let postUserProfile = function(newProfile) {
-	// 	return $q((resolve, reject) => {
-	// 		$http.post(`${FIREBASE_CONFIG.databaseURL}/profiles.json`,
-	// 			JSON.stringify({
-	// 				dogname: newProfile.dogname,
-	// 				ownername: newProfile.ownername,
-	// 				isCurrent: newProfile.isCurrent,
-	// 				uid: newProfile.uid
-	// 			})
-	// 		)
-	// 		.success(function(postResponse) {
-	// 			resolve(postResponse);
-	// 		})
-	// 		.error(function(postError) {
-	// 			reject(postError);
-	// 		});
-	// 	});
-	// };
-
-	let addCurrentPark = function(currentLoc) {
-		return $q((resolve, reject) => {
-			$http.put(`${FIREBASE_CONFIG.databaseURL}/favorites/${currentLoc.id}.json`,
-				JSON.stringify ({
-					name: currentLoc.name,
-					address: currentLoc.formatted_address,
-					location: currentLoc.geometry,
-					place_id: currentLoc.id,
-					uid: currentLoc.uid
-				})
-			)
-			.success(function(editResponse) {
-				console.log(editResponse);
-				resolve(editResponse);
-			})
-			.error(function(editError){
-				reject(editError);
-			});
-		});
-	};
+app.factory("FavoriteFactory", function($q, $http, FIREBASE_CONFIG) {
 
 	let getSingleFavorite = function(favId) {
 		return $q((resolve, reject) => {
@@ -78,6 +21,7 @@ app.factory("UserProfileFactory", function($q, $http, FIREBASE_CONFIG) {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/favorites.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(response) {
 				let favorites = [];
+				console.log("butts", favorites);
 				Object.keys(response).forEach(function(key) {
 					response[key].id = key;
 					favorites.push(response[key]);
@@ -105,7 +49,6 @@ app.factory("UserProfileFactory", function($q, $http, FIREBASE_CONFIG) {
 	return {
 		getFavorites: getFavorites,
 		deleteFavorite: deleteFavorite,
-		addCurrentPark: addCurrentPark,
 		getSingleFavorite: getSingleFavorite
 	};
 });

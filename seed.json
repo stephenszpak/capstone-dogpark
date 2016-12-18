@@ -2,25 +2,13 @@
 	"users": {
 		"user1": {
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
-			"username": "a"
+			"username": "steve",
+			"dogname": "elly"
 		},
 		"user2": {
 			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
-			"username": "b"
-		}
-	},
-	"profiles": {
-		"profile1": {
-			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
-			"dogname": "Elanore",
-			"ownername": "Stephen",
-			"isCurrent": false
-		},
-		"profile2": {
-			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
-			"dogname": "Captian Gilbert",
-			"ownername": "Richard Cheese",
-			"isCurrent": false
+			"username": "b",
+			"dogname": "butts"
 		}
 	},
 	"favorites": {
@@ -35,6 +23,22 @@
 			"placeid": "ChIJ4b8piI1mZIgRaLm5_PZJkOA",
 			"name": "",
 			"address": ""
+		}
+	},
+	"contacts": {
+		"contact1": {
+			"dogname": "tehe Durbs",
+			"ownername": "888-888-8888",
+			"phone": "blah@blah.com",
+			"email": "www.hollaa.com",
+			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2"
+		},
+		"contact2": {
+			"dogname": "Billy Durbs",
+			"ownername": "888-888-8888",
+			"phone": "blah@blah.com",
+			"email": "www.hollaa.com",
+			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2"
 		}
 	}
 }
