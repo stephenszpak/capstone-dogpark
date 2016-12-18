@@ -5,7 +5,7 @@
     "users": {
       ".indexOn": "uid"
     },
-    "profiles": {
+    "contacts": {
       ".indexOn": "uid"
     },
     "favorites": {
