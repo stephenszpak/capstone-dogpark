@@ -23,7 +23,6 @@ app.factory("GoogleApiFactory", function($q, $http, FIREBASE_CONFIG, GOOGLE) {
 					address: newFav.formatted_address,
 					location: newFav.geometry,
 					place_id: newFav.id,
-					photo: newFav.photos[0],
 					uid: newFav.uid
 				})
 			)

@@ -1,80 +1,79 @@
 <div class="container">
-  <div class="row">
-   <div class="register-btn vt-font-style"><a class="waves-effect waves-light btn grey darken-2" data-target="addModal">Add Contacts</a></div>
-</div>
-
+    <div class="row">
+        <div class="register-btn vt-font-style"><a class="waves-effect waves-light btn grey darken-2" data-target="addModal">Add Contacts</a></div>
+    </div>
     <div class="row">
         <div ng-repeat="contact in contacts">
             <div class="col s4">
-                <div class="carde-size card grey darken-2">
-                    <div class="card-content white-text">
-                        <span class="card-title"><a href="#/favorite/details/{{favorites.id}}">{{contact.dogname}}</a></span>
-                        <div>{{contact.ownername}}</div>
-                        <div>{{contact.phone}}</div>
-                        <div>{{contact.email}}</div>
-                        <span><a href ng-click="deleteContact(contact.id)"><i class="small material-icons">delete</i></a></span>
-                        <span><a href ng-click="viewContact(contact)" data-target="editModal"><i class="small material-icons">edit</i></a></span>
+                <div class="card horizontal grey darken-2">
+                    <div class="card-image">
+                        <img src="images/elanore.jpg">
                     </div>
-                    
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>{{contact.dogname}}</h3>
+                            <p>{{contact.ownername}}</p>
+                            <p>{{contact.phone}}</p>
+                            <p>{{contact.email}}</p>
+                        </div>
+                        <div class="card-action">
+                            <span><a href ng-click="deleteContact(contact.id)"><i class="small material-icons">delete</i></a></span><span><a href ng-click="viewContact(contact)" data-target="editModal"><i class="small material-icons">edit</i></a></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-    
- 
-<!-- Edit Contact Modal -->
-  <div id="editModal" class="modal modal-fixed-footer">
-    <div class="modal-content">
-       <form>
-        <div class="form-group">
-          <label>Dog's Name: </label>
-          <input type="text" class="form-control" ng-model="selectedContact.dogname">
-        </div>
-        <div class="form-group">
-          <label>Hooman's Name:</label>
-          <input type="text" class="form-control" ng-model="selectedContact.ownername">
-        </div>
-        <div class="form-group">
-          <label>Phone:</label>
-          <input type="tel" class="form-control" ng-model="selectedContact.phone">
-        </div>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="text" class="form-control" ng-model="selectedContact.email">
-        </div>
-      </form>
     </div>
-    <div class="modal-footer">
-      <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="editContact(selectedContact)">Add</a>
+    <!-- Edit Contact Modal -->
+    <div id="editModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <form>
+                <div class="form-group">
+                    <label>Dog's Name: </label>
+                    <input type="text" class="form-control" ng-model="selectedContact.dogname">
+                </div>
+                <div class="form-group">
+                    <label>Hooman's Name:</label>
+                    <input type="text" class="form-control" ng-model="selectedContact.ownername">
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" class="form-control" ng-model="selectedContact.phone">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" ng-model="selectedContact.email">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="editContact(selectedContact)">Add</a>
+        </div>
     </div>
-  </div>
-
-  <!-- Add Contact Modal -->
-  <div id="addModal" class="modal modal-fixed-footer">
-    <div class="modal-content">
-       <form>
-        <div class="form-group">
-          <label>Dog's Name: </label>
-          <input type="text" class="form-control" ng-model="newContact.dogname">
+    <!-- Add Contact Modal -->
+    <div id="addModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <form>
+                <div class="form-group">
+                    <label>Dog's Name: </label>
+                    <input type="text" class="form-control" ng-model="newContact.dogname">
+                </div>
+                <div class="form-group">
+                    <label>Hooman's Name:</label>
+                    <input type="text" class="form-control" ng-model="newContact.ownername">
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input type="tel" class="form-control" ng-model="newContact.phone">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" ng-model="newContact.email">
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label>Hooman's Name:</label>
-          <input type="text" class="form-control" ng-model="newContact.ownername">
+        <div class="modal-footer">
+            <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addContact(newContact)">Add</a>
         </div>
-        <div class="form-group">
-          <label>Phone:</label>
-          <input type="tel" class="form-control" ng-model="newContact.phone">
-        </div>
-        <div class="form-group">
-          <label>Email:</label>
-          <input type="text" class="form-control" ng-model="newContact.email">
-        </div>
-      </form>
     </div>
-    <div class="modal-footer">
-      <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="addContact(newContact)">Add</a>
-    </div>
-  </div>
-     
-
-</div>  
+</div>
