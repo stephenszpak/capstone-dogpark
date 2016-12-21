@@ -7,6 +7,7 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory) {
     // modal init
     $(document).ready(function(){
         $('.modal').modal();
+        $('.collapsible').collapsible();
     });
 
 

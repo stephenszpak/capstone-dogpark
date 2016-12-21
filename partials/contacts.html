@@ -2,32 +2,31 @@
     <div class="row">
         <div class="register-btn vt-font-style"><a class="waves-effect waves-light btn grey darken-2" data-target="addModal">Add Contacts</a></div>
     </div>
-    <div class="row">
-        <div ng-repeat="contact in contacts">
-            <div class="col s4">
-                <div class="card horizontal grey darken-2">
-                    <div class="card-image">
-                        <img src="images/elanore.jpg">
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <h3>{{contact.dogname}}</h3>
-                            <p>{{contact.ownername}}</p>
-                            <p>{{contact.phone}}</p>
-                            <p>{{contact.email}}</p>
-                        </div>
-                        <div class="card-action">
-                            <span><a href ng-click="deleteContact(contact.id)"><i class="small material-icons">delete</i></a></span><span><a href ng-click="viewContact(contact)" data-target="editModal"><i class="small material-icons">edit</i></a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <ul class="collection" ng-repeat="contact in contacts">
+        <li class="collection-item avatar">
+            <img ng-src="{{contact.img}}" alt="" class="circle">
+            <span class="title"><strong>{{contact.dogname}}</strong></span>
+            <span><a href class="contact-btn" ng-click="deleteContact(contact.id)"><i class="small material-icons">delete</i></a></span>
+            <span><a href class="contact-btn" ng-click="viewContact(contact)" data-target="editModal"><i class="small material-icons">edit</i></a></span>
+            <p>
+                {{contact.ownername}}
+                <br>
+                {{contact.phone}}
+                <br>
+                {{contact.email}}
+            </p>
+        </li>
+    </ul>
+
     <!-- Edit Contact Modal -->
     <div id="editModal" class="modal modal-fixed-footer">
         <div class="modal-content">
             <form>
+                <div class="form-group">
+                    <label>Pup's Photo:</label>
+                    <input type="tel" class="form-control" ng-model="selectedContact.img">
+                </div>
                 <div class="form-group">
                     <label>Dog's Name: </label>
                     <input type="text" class="form-control" ng-model="selectedContact.dogname">
@@ -50,10 +49,15 @@
             <a href class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="editContact(selectedContact)">Add</a>
         </div>
     </div>
+
     <!-- Add Contact Modal -->
     <div id="addModal" class="modal modal-fixed-footer">
         <div class="modal-content">
             <form>
+                <div class="form-group">
+                    <label>Pup's Photo:</label>
+                    <input type="tel" class="form-control" ng-model="selectedContact.img">
+                </div>
                 <div class="form-group">
                     <label>Dog's Name: </label>
                     <input type="text" class="form-control" ng-model="newContact.dogname">
