@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div ng-repeat="favorites in favoriteList">
+            <div class="col s4">
+                <div class="carde-size card grey darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{favorites.title}}</span>
+                        <div>{{favorites.address}}</div>
+                        <div>
+                            <a href="#"
+                            socialshare
+                            socialshare-provider="twitter"
+                            socialshare-text="Hey come meet me and pupper at {{favorites.name}}!"
+                            socialshare-hashtags="dogparks, imcool"
+                            socialshare-url="dog">
+                                <i class="small material-icons">announcement</i>
+                            </a>
+                            <a href="#"
+                            socialshare
+                            socialshare-provider="email"
+                            socialshare-subject="Come hang out at {{favorites.name}}"
+                            socialshare-body="I'm at {{favorites.name}} currently, come bring your pup.  The address is {{favorites.address}}">
+                                <i class="small material-icons">email</i>
+                            </a>
+                            <a href ng-click="deleteFavorite(favorites.id)">
+                                <i class="small material-icons">delete</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

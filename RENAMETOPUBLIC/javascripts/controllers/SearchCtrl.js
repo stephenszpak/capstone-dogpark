@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFactory) {
+app.controller('SearchCtrl', function($scope, $location, $rootScope, GoogleApiFactory, FavoriteFactory) {
 
 
  $scope.lat = {};

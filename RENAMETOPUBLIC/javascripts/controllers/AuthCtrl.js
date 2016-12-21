@@ -1,6 +1,10 @@
 "use strict";
 
-app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
+app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFactory, AuthFactory, UserFactory) {
+	$scope.login = {
+		email: "a@a.com",
+		password: "123123"
+	};
 
 	if($location.path() === "/logout") {
 		AuthFactory.logout();
