@@ -10,7 +10,8 @@ app.factory("ContactsFactory", function($q, $http, FIREBASE_CONFIG) {
                     dogname: newContact.dogname,
                     ownername: newContact.ownername,
                     phone: newContact.phone,
-                    email: newContact.email
+                    email: newContact.email,
+                    img: newContact.img
                 })
             )
             .success(function(storedUserSuccess){
@@ -57,7 +58,8 @@ app.factory("ContactsFactory", function($q, $http, FIREBASE_CONFIG) {
                     ownername: editedContact.ownername,
                     phone: editedContact.phone,
                     email: editedContact.email,
-                    uid: editedContact.uid
+                    uid: editedContact.uid,
+                    img: editedContact.img
                 })
             ).success(function(editResponse) {
                 resolve(editResponse);

@@ -1,8 +1,6 @@
 "use strict";
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFactory, AuthFactory, UserFactory) {
-	$scope.loginContainer = true;
-	$scope.registerContainer = false;
 	$scope.login = {
 		email: "a@a.com",
 		password: "123123"
@@ -27,16 +25,6 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, GoogleApiFact
 			$scope.register = {};
 			$location.url("/search");
 		});
-	};
-
-	$scope.setLoginContainer = function() {
-		$scope.loginContainer = true;
-		$scope.registerContainer = false;
-	};
-
-	$scope.setRegisterContainer = function() {
-		$scope.loginContainer = false;
-		$scope.registerContainer = true;
 	};
 
 	$scope.registerUser = function(registerNewUser) {

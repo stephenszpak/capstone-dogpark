@@ -43,11 +43,6 @@ app.config(function($routeProvider, $httpProvider) {
 			controller: "SearchCtrl",
 			resolve: {isAuth}
 		})
-		.when('/favorite/details/:id', {
-			templateUrl: 'partials/favorite-details.html',
-			controller: 'FavoriteDetailsCtrl',
-			resolve: {isAuth}
-		})
 		.when('/contacts', {
 		      templateUrl: 'partials/contacts.html',
 		      controller: 'ContactCtrl',

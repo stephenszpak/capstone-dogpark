@@ -14,7 +14,7 @@ app.controller("NavCtrl", function($scope){
 			name:"Logout",
 			url:"#/logout"
 		},
-		{	name:"Contacts",
+		{	name:"Friends",
 			url:"#/contacts"
 		}		
 	];

@@ -27,17 +27,19 @@
 	},
 	"contacts": {
 		"contact1": {
-			"dogname": "tehe Durbs",
-			"ownername": "888-888-8888",
-			"phone": "blah@blah.com",
-			"email": "www.hollaa.com",
+			"dogname": "Elanore",
+			"ownername": "Stephen",
+			"phone": "888-888-8888",
+			"email": "yup@yup.com",
+			"img": "images/elly.jpg",
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2"
 		},
 		"contact2": {
-			"dogname": "Billy Durbs",
-			"ownername": "888-888-8888",
-			"phone": "blah@blah.com",
-			"email": "www.hollaa.com",
+			"dogname": "Skippy",
+			"ownername": "Melanie",
+			"phone": "888-888-8888",
+			"email": "yup@yup.com",
+			"img": "images/skippy.jpg",
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2"
 		}
 	}

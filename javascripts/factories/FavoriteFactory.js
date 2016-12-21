@@ -2,19 +2,34 @@
 
 app.factory("FavoriteFactory", function($q, $http, FIREBASE_CONFIG) {
 
-	let getSingleFavorite = function(favId) {
+	let postNewFav = function(newFav) {
 		return $q((resolve, reject) => {
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/favorites/${favId}.json`)
-			.success(function(getSingleResponse) {
-				console.log(getSingleResponse);
-				resolve(getSingleResponse);
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/favorites.json`,
+				JSON.stringify ({
+					uid: newFav.uid,
+					placeid: newFav.placeid,
+					photo: newFav.photo,
+					title: newFav.title,
+					location: newFav.location,
+					address: newFav.address,
+					phone_number: newFav.phone_number,
+					website: newFav.website,
+					rating: newFav.rating,
+					price: newFav.price,
+					reviews: newFav.reviews,
+					hours: newFav.hours,
+					detailed_icon: newFav.detailed_icon,
+					types: newFav.types
+				})
+			)
+			.success(function(postResponse) {
+				resolve(postResponse);
 			})
-			.error(function(getSingleError) {
-				reject(getSingleError);
+			.error(function(postError){
+				reject(postError);
 			});
 		});
 	};
-
 
 	let getFavorites = function (userId) {
 		return $q((resolve, reject) => {
@@ -49,6 +64,6 @@ app.factory("FavoriteFactory", function($q, $http, FIREBASE_CONFIG) {
 	return {
 		getFavorites: getFavorites,
 		deleteFavorite: deleteFavorite,
-		getSingleFavorite: getSingleFavorite
+		postNewFav: postNewFav
 	};
 });

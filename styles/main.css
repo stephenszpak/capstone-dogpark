@@ -11,8 +11,17 @@ html, body {
   padding-top: 20px;
   float: right; }
 
+.contact-btn {
+  float: right; }
+
 .doggo {
   height: 100px; }
+
+#map {
+  width: 100%;
+  height: 500px;
+  margin: 12px;
+  box-shadow: 0 3px 25px black; }
 
 .drag-fav {
   margin-top: 8px;
