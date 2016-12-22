@@ -1,13 +1,9 @@
 "use strict";
 
 app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFactory) {
-
-
- $scope.lat = {};
+ 	$scope.lat = {};
     $scope.lng = {};
-    $scope.loading = true;
     $scope.selectedPlace = {};
-    $scope.myplaces = [];
     let options = {
         componentRestrictions: {
             country: "us"
@@ -29,8 +25,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
         var openedInfoWindow = null;
         var bounds = new google.maps.LatLngBounds();
         var map;
-        var query = "dog parks";
-        var radius = 3000,
+        var radius = 500,
 
             center = new google.maps.LatLng($scope.lat, $scope.lng),
             mapOptions = {
@@ -51,7 +46,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
                     lng: $scope.lng
                 },
                 radius: radius,
-                query: query
+                query: "dog parks in"
             }, processResults);
             function processResults(results, status, pagination) {
                 var locations;
@@ -122,7 +117,37 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
             })(marker, data);
             $scope.$apply();
         }
-    }
+    
+
+    var infoGeoWindow = new google.maps.InfoWindow({map: map});
+    // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoGeoWindow.setPosition(pos);
+            infoGeoWindow.setContent('YOU ARE HERE!');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoGeoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoGeoWindow, map.getCenter());
+        }
+
+	}
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+      
 
     $scope.addFavorite = function(dog) {
 		dog.uid = $rootScope.user.uid;
@@ -147,70 +172,6 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //   	$scope.lat = {};
- //    $scope.lng = {};
- //    $scope.markers = [];
- //    let options = {
- //        componentRestrictions: {
- //            country: "us"
- //        }
- //    };
-
-	
-
-   
- //    function initialize() {
- //        var pyrmont = new google.maps.LatLng(36.174465, -86.767960);
-	// 	$scope.map = new google.maps.Map(document.getElementById('map'), {
-	// 		center: pyrmont,
-	// 		zoom: 12,
-	// 		scrollwheel: false
-	// });
-
-	// var infowindow = new google.maps.InfoWindow();
- //    var service = new google.maps.places.PlacesService(map);
-	
-
-	// $scope.showDogPark = function() {
-	// 	GoogleApiFactory.textSearch($scope.map, $scope.query).then(function(result) {
-	// 	let markers;
-	// 		for (var i = 0; i < result.length; i++) {  
-	// 			markers = new google.maps.Marker({
-	// 				position: result[i].geometry.location,
-	// 				map: $scope.map,
-	// 				icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
-	// 			});
-	// 			markers = result;
-	// 		}
-
-	// 	$scope.markers = result;
-	// 	console.log("markers", markers);
-
-	// 	});
-		
-	// };
-
- //    }
- //    initialize();
+  $('.modal').modal();
 
 });

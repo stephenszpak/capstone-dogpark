@@ -3,6 +3,10 @@
 app.controller("NavCtrl", function($scope){
 	$scope.navItems = [
 		{
+			name:"Logout",
+			url:"#/logout"
+		},
+		{
 			name:"Search",
 			url:"#/search"
 		},
@@ -10,12 +14,10 @@ app.controller("NavCtrl", function($scope){
 			name: "Favorites",
 			url: "#/favorite"
 		},
-		{
-			name:"Logout",
-			url:"#/logout"
-		},
 		{	name:"Friends",
 			url:"#/contacts"
 		}		
 	];
+
+	$(".button-collapse").sideNav();
 });

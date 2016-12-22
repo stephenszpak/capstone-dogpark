@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
-        <div class="register-btn vt-font-style"><a class="waves-effect waves-light btn grey darken-2" data-target="addModal">Add Contacts</a></div>
+        <div class="register-btn uppercase-font-style"><a class="waves-effect waves-light btn dk-blue" data-target="addModal">Add Friend</a></div>
     </div>
 
     <ul class="collection" ng-repeat="contact in contacts">
         <li class="collection-item avatar">
             <img ng-src="{{contact.img}}" alt="" class="circle">
             <span class="title"><strong>{{contact.dogname}}</strong></span>
-            <span><a href class="contact-btn" ng-click="deleteContact(contact.id)"><i class="small material-icons">delete</i></a></span>
-            <span><a href class="contact-btn" ng-click="viewContact(contact)" data-target="editModal"><i class="small material-icons">edit</i></a></span>
+            <span><a href class="contact-btn" ng-click="deleteContact(contact.id)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a></span>
+            <span><a href class="contact-btn" ng-click="viewContact(contact)" data-target="editModal"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></span>
             <p>
                 {{contact.ownername}}
                 <br>

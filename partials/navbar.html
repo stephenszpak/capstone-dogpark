@@ -1,10 +1,17 @@
 <!-- navbar -->
 <div class="navbar-fixed" ng-controller="NavCtrl">
     <nav>
-        <div class="nav-wrapper grey darken-2">
-            <a href="#!" class="brand-logo center lobster-font-style">off leash</a>
-            <ul class="left hide-on-med-and-down" ng-repeat="nav in navItems">
-                <li class="vt-font-style"><a href="{{nav.url}}">{{nav.name}}</a></li>
+        <div class="nav-wrapper dk-blue">
+            <a href="#!" class="brand-logo center uppercase-font-style">off leash</a>
+            <a href data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down" ng-repeat="nav in navItems">
+                <li class="norm-font-style"><a href="{{nav.url}}">{{nav.name}}</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#/contacts">Friends</a></li>
+                <li><a href="#/favorites">Favorites</a></li>
+                <li><a href="#/search">Search</a></li>
+                <li><a href="#/logout">Logout</a></li>
             </ul>
         </div>
     </nav>

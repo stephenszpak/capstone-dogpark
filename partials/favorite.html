@@ -2,28 +2,28 @@
     <div class="row">
         <div ng-repeat="favorites in favoriteList">
             <div class="col s4">
-                <div class="carde-size card grey darken-2">
+                <div class="fav-card-size card">
                     <div class="card-content white-text">
                         <span class="card-title">{{favorites.title}}</span>
                         <div>{{favorites.address}}</div>
-                        <div>
-                            <a href="#"
+                        <div class="fixed-bot-card">
+                            <a href
                             socialshare
                             socialshare-provider="twitter"
-                            socialshare-text="Hey come meet me and pupper at {{favorites.name}}!"
+                            socialshare-text="Hey come meet me and pupper at {{favorites.title}}!"
                             socialshare-hashtags="dogparks, imcool"
                             socialshare-url="dog">
-                                <i class="small material-icons">announcement</i>
+                                <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
                             </a>
-                            <a href="#"
+                            <a href
                             socialshare
                             socialshare-provider="email"
-                            socialshare-subject="Come hang out at {{favorites.name}}"
+                            socialshare-subject="Come hang out at {{favorites.title}}"
                             socialshare-body="I'm at {{favorites.name}} currently, come bring your pup.  The address is {{favorites.address}}">
-                                <i class="small material-icons">email</i>
+                                <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
                             </a>
                             <a href ng-click="deleteFavorite(favorites.id)">
-                                <i class="small material-icons">delete</i>
+                                <i class="fa fa-minus-circle fa-2x" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
