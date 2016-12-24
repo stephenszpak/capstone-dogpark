@@ -24,6 +24,7 @@
     "angular-route": "1.5.8",
     "materialize": "^0.97.8",
     "angular-dragdrop": "^1.0.13",
-    "angular-socialshare": "angularjs-socialshare#^2.3.3"
+    "angular-socialshare": "angularjs-socialshare#^2.3.3",
+    "alertify.js": "^0.3.11"
   }
 }

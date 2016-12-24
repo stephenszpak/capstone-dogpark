@@ -165,6 +165,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
     $scope.addFavorite = function(dog) {
 		dog.uid = $rootScope.user.uid;
 		FavoriteFactory.postNewFav(dog).then(function(data) {
+			alertify.success('Added To Favorites!');
 			$location.url('/search');
 		});
 	};

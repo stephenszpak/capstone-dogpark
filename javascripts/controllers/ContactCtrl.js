@@ -32,6 +32,7 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
 
     $scope.deleteContact = function(contactId) {
         ContactsFactory.deleteContact(contactId).then(function() {
+            alertify.error('Contact removed');
             getContacts();
         });
     };
@@ -49,12 +50,14 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
 
     $scope.editUser = function(user) {
         UserFactory.editUser($rootScope.user.uid, user).then(function(data) {
+            alertify.success('Contact Updated');
             getUser();
         });
     };
 
     $scope.addContact = function(contact) {
         ContactsFactory.addContact($rootScope.user.uid, contact).then(function() {
+            alertify.success('Contact Added');
             getContacts();
             contact = "";
         });

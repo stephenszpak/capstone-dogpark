@@ -3,7 +3,7 @@
         <span class="right"><a class="waves-effect waves-light btn dk-blue" data-target="addContactModal">Add Friend</a></span>
         <span class="right"><a class="waves-effect waves-light btn dk-blue" data-target="editUserModal">Edit User</a></span>
     </div> 
-    <ul class="collection" ng-repeat="contact in contacts">
+    <ul class="collection hoverable" ng-repeat="contact in contacts">
         <li class="collection-item avatar">
             <img ng-src="{{contact.img}}" alt="" class="circle">
             <span class="title"><strong>{{contact.dogname}}</strong></span>

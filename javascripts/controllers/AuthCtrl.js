@@ -1,10 +1,6 @@
 "use strict";
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
-	$scope.login = {
-		email: "e@e.com",
-		password: "123123"
-	};
 
 	if($location.path() === "/logout") {
 		AuthFactory.logout();
@@ -12,7 +8,6 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 		$location.url("/auth");
 	}
 
-	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 	$('.modal').modal();
 
 	let logMeIn = function(loginStuff) {

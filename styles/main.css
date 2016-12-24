@@ -53,9 +53,9 @@ html, body {
   background: #087BA5; }
 
 .card-container {
+  margin-top: 12px;
   max-height: 550px;
-  overflow: auto;
-  box-shadow: 0 3px 25px black; }
+  overflow: auto; }
 
 .dk-blue {
   background: #087BA5; }

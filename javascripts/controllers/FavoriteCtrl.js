@@ -11,11 +11,12 @@ app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParam
 			$scope.favoriteList = data;
 		});
     };
-$('.materialboxed').materialbox();
+
     showFavorites();
 
 	$scope.deleteFavorite = function(favoriteId) {
 		FavoriteFactory.deleteFavorite(favoriteId).then(function(response) {
+			alertify.error('Favorite Removed');
 			showFavorites();
 		});
 	};
