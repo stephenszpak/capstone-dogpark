@@ -3,12 +3,16 @@
 		"user1": {
 			"uid": "gTk7EeRExRQlnFB5tYltNPhhFkO2",
 			"username": "steve",
-			"dogname": "elly"
+			"dogname": "elly",
+			"dogimg": "",
+			"phone": "888-888-8888"
 		},
 		"user2": {
 			"uid": "LL0GNalawyRP51t53cCDv5AoH5g1",
 			"username": "b",
-			"dogname": "butts"
+			"dogname": "butts",
+			"dogimg": "",
+			"phone": "888-888-8888"
 		}
 	},
 	"favorites": {

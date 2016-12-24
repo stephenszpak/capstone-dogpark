@@ -8,7 +8,9 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 				JSON.stringify({
 					uid: authData.uid,
 					ownername: authData.ownername,
-					dogname: authData.dogname
+					dogname: authData.dogname,
+					dogimg: authData.dogimg,
+					phone: authData.phone
 				})
 			)
 			.success(function(storeUserSuccess) {
@@ -38,27 +40,15 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 		});
 	};
 
-	let getUserDetails = (userId) => {
-		return $q((resolve, reject) => {
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/users/${userId}.json`)
-			.success(function(userObject){
-				resolve(userObject);
-			})
-			.error(function(error){
-				reject(error);
-			});
-		});
-	};
-
-	let editUser = function(editedUserId, editUserInfo){
+	let editUser = function(editedUserId){
 		return $q((resolve, reject)=> {
-			$http.put(`${FIREBASE_CONFIG.databaseURL}/users/${editedUserId}.json`, 
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/users/${editedUserId.id}.json`, 
 				JSON.stringify({
-					uid: editedUserId,
-					dogname: editUserInfo.dogname,
-					ownername: editUserInfo.ownername,
-					phonenumber: editUserInfo.phonenumber,
-					email: editUserInfo.email
+					uid: editedUserId.uid,
+					ownername: editedUserId.ownername,
+					dogname: editedUserId.dogname,
+					dogimg: editedUserId.dogimg,
+					phone: editedUserId.phone
 				})
 			).success(function(editResponse) {
 				resolve(editResponse);
@@ -72,7 +62,6 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 	return{
 		addUser:addUser,
 		getUser:getUser,
-		getUserDetails: getUserDetails,
 		editUser: editUser
 	};
 });

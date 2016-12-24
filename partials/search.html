@@ -9,25 +9,27 @@
         <div class="card-container col s12 m4 l3">
             <!-- dog park cards/list -->
             <div ng-repeat="dogpark in markers">
-                <div class="card">
-                <div class="carde-size card-content uppercase-font-style">
-                    <span class="card-title white-text">
-                        <h5>{{dogpark.title}}</h5>
-                    </span>
-                    <span>
-                        <a href ng-click="viewLocation(dogpark)" data-target="details"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i></a>
-                        <a href ng-click="addFavorite(dogpark)"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></a>
-                    </span>
-                </div>
+                <div class="card carde-size small">
+                    <div class="card-content">
+                        <span class="card-title white-text">{{dogpark.title}}</span>
+                            
+                            <p>{{dogpark.address}}</p>
+                       
+                        <span class="card-action">
+                            <a href ng-click="viewLocation(dogpark)" data-target="details"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i></a>
+                            <a href ng-click="addFavorite(dogpark)"><i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i></a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- google map -->
         <div class="col s12 m8 l9">
             <div id="map"></div>
         </div>
     </div>
 </div>
-<!-- Modal Structure -->
+<!-- Details Modal -->
 <div id="details" class="modal model-fixed-footer mod-height">
     <div id="viewdetails" class="modal-content">
         <h4>{{selectedPlace.title}}</h4>
@@ -36,10 +38,11 @@
         <br>
         <p>Rating: {{selectedPlace.rating}}</p>
     </div>
+    <img src="{{selectedPlace.photo}}">
     <div class="modal-footer">
         <div id="reviews" class="review-box">
             <ul>
-                <li class="reviews" ng-repeat="review in selectedPlace.reviews">"{{review.text}} ({{review.rating}}/5)" <br>-- {{review.author_name}}, {{review.relative_time_description}}</li>
+                <li class="reviews" ng-repeat="review in selectedPlace.reviews">"{{review.text}} ({{review.rating}}/5)" <br><strong>-- {{review.author_name}}</strong>, {{review.relative_time_description}}</li>
             </ul>
         </div>
     </div>

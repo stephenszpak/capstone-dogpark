@@ -1,7 +1,27 @@
 <div class="container">
     <div class="row">
         <!-- register button -->
-        <div class="register-btn uppercase-font-style"><a class="waves-effect waves-light btn dk-blue" data-target="modal1">Register</a></div>
+        <div class="register-btn"><a class="waves-effect waves-light btn dk-blue" data-target="modal1">Register</a></div>
+        <!-- login -->
+        <div class="login-field">
+            <form class="col s4">
+                <div class="row">
+                    <div class="input-field">
+                        <input id="email" type="email" ng-model="login.email" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <input id="password" type="password" ng-model="login.password" class="validate">
+                        <label for="password" data-error="wrong" data-success="right">Password</label>
+                    </div>
+                    <!-- login button -->
+                    <div class="col s12 m4 l2"><a class="waves-effect waves-light btn dk-blue" ng-click="loginUser(login)">Login</a></div>
+                </div>
+            </form>
+        </div>
+        
         <!-- register modal-->
         <div id="modal1" class="modal bottom-sheet">
             <div class="modal-content">
@@ -20,7 +40,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field">
-                            <input id="password" type="text" ng-model="register.username">
+                            <input id="password" type="text" ng-model="register.ownername">
                             <label>Username</label>
                         </div>
                     </div>
@@ -30,30 +50,23 @@
                             <label>Dog's Name</label>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="password" type="text" ng-model="register.phone">
+                            <label>Phone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <input id="password" type="text" ng-model="register.dogimg">
+                            <label>Pup's Picture</label>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <a href="#!" ng-click="registerUser(register)" class="modal-action modal-close waves-effect waves-green btn-flat">Register!</a>
             </div>
-        </div>
-        <!-- login -->
-        <div class="login-field">
-            <form class="col s4">
-                <div class="row">
-                    <div class="input-field">
-                        <input id="email" type="email" ng-model="login.email" class="validate">
-                        <label for="email" data-error="wrong" data-success="right">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field">
-                        <input id="password" type="password" ng-model="login.password" class="validate">
-                        <label for="password" data-error="wrong" data-success="right">Password</label>
-                    </div>
-                    <!-- login button -->
-                    <div class="col s12 m4 l2 uppercase-font-style"><a class="waves-effect waves-light btn dk-blue" ng-click="loginUser(login)">Login</a></div>
-                </div>
-            </form>
         </div>
     </div>
 </div>

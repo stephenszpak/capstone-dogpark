@@ -10,6 +10,9 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
         }
     };
 
+   	$('.materialboxed').materialbox();
+	$('.modal').modal();
+
     let inputFrom = document.getElementById('parkSearch');
     let autocompleteFrom = new google.maps.places.Autocomplete(inputFrom, options);
     google.maps.event.addListener(autocompleteFrom, 'place_changed', function() {
@@ -25,7 +28,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
         var openedInfoWindow = null;
         var bounds = new google.maps.LatLngBounds();
         var map;
-        var radius = 500,
+        var radius = 1000,
 
             center = new google.maps.LatLng($scope.lat, $scope.lng),
             mapOptions = {
@@ -75,6 +78,15 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
                 if (status != google.maps.places.PlacesServiceStatus.OK) {
                     return;
                 }
+                var locPhoto;
+                if (result.photos !== undefined) {
+                    locPhoto = result.photos[0].getUrl({
+                        'maxWidth': 300,
+                        'maxHeight': 175
+                    });
+                } else {
+                    locPhoto = "http://www.freeiconspng.com/uploads/no-image-icon-15.png";
+                }
                 var marker = new google.maps.Marker({
                     map: map,
                     place: {
@@ -82,6 +94,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
                         location: result.geometry.location,
                     },
                     placeid: data.placeId,
+                    photo: locPhoto,
                     title: result.name,
                     location: result.geometry.location,
                     address: result.formatted_address,
@@ -157,8 +170,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
 	};
 
     $scope.viewLocation = function(selectedPlace) {
-      $scope.selectedPlace = selectedPlace;
-      console.log(selectedPlace);
+		$scope.selectedPlace = selectedPlace;
     };
 
     initializeOriginalCoordinates();
@@ -172,6 +184,5 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
 }
 
 
-  $('.modal').modal();
 
 });

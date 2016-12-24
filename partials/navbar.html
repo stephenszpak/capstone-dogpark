@@ -5,7 +5,7 @@
             <a href="#!" class="brand-logo center uppercase-font-style">off leash</a>
             <a href data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down" ng-repeat="nav in navItems">
-                <li class="norm-font-style"><a href="{{nav.url}}">{{nav.name}}</a></li>
+                <li><a href="{{nav.url}}">{{nav.name}}</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="#/contacts">Friends</a></li>
@@ -13,12 +13,16 @@
                 <li><a href="#/search">Search</a></li>
                 <li><a href="#/logout">Logout</a></li>
             </ul>
+            <div class="chip">
+                <img src="{{user.dogimg}}" alt="Contact Person">
+                {{user.dogname}}
+            </div>
         </div>
     </nav>
 </div>
 <div class="col s12 m6 l8">
 <div class="row">
-    <!-- doggy animation -->
+    <!-- dog animation -->
     <div class="dog">
         <div class="ears"></div>
         <div class="body">

@@ -2,7 +2,7 @@
 
 app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParams, $location, FavoriteFactory, UserFactory) {
 	$scope.favoriteList = {};
-	$scope.selectedFavorite = {};
+	$scope.selectedPlace = {};
 
 
 	let showFavorites = function() {
@@ -11,7 +11,7 @@ app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParam
 			$scope.favoriteList = data;
 		});
     };
-
+$('.materialboxed').materialbox();
     showFavorites();
 
 	$scope.deleteFavorite = function(favoriteId) {
@@ -19,5 +19,4 @@ app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParam
 			showFavorites();
 		});
 	};
-
 });
