@@ -1,10 +1,6 @@
 "use strict";
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
-	$scope.login = {
-		email: "e@e.com",
-		password: "123123"
-	};
 
 	// materialize modal init
 	$('.modal').modal();
