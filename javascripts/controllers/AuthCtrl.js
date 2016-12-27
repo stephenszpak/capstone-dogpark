@@ -1,14 +1,19 @@
 "use strict";
 
 app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, UserFactory) {
+	$scope.login = {
+		email: "e@e.com",
+		password: "123123"
+	};
+
+	// materialize modal init
+	$('.modal').modal();
 
 	if($location.path() === "/logout") {
 		AuthFactory.logout();
 		$rootScope.user = {};
 		$location.url("/auth");
 	}
-
-	$('.modal').modal();
 
 	let logMeIn = function(loginStuff) {
 		AuthFactory.authenticate(loginStuff).then(function(didLogin) {
@@ -33,5 +38,4 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 	$scope.loginUser = function(loginNewUser) {
 		logMeIn(loginNewUser);
 	};
-
 });

@@ -3,24 +3,17 @@
 app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, UserFactory) {
     $scope.contacts = [];
     $scope.selectedContact = [];
+
     // modal init
+    $('.modal').modal();
 
-        $('.modal').modal();
-
-
-
-    function getUser() {
-        UserFactory.getUser($rootScope.user.uid).then(function(data) {
-            $scope.user = data;
-        });
-    }
+    
 
     function getContacts() {
         ContactsFactory.getContacts($rootScope.user.uid).then(function(usersContacts) {
             $scope.contacts = usersContacts;
         });
     }
-
 
     $scope.editContact = function(contact) {
         ContactsFactory.editContact(contact).then(function() {
@@ -47,11 +40,9 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
         });
     };
 
-
     $scope.editUser = function(user) {
         UserFactory.editUser($rootScope.user.uid, user).then(function(data) {
             alertify.success('Contact Updated');
-            getUser();
         });
     };
 
@@ -62,5 +53,4 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
             contact = "";
         });
     };
-
 });

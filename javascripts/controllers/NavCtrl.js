@@ -18,6 +18,4 @@ app.controller("NavCtrl", function($scope){
 			url:"#/contacts"
 		}		
 	];
-	
-	$(".button-collapse").sideNav();
 });

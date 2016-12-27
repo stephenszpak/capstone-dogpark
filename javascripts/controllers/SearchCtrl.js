@@ -10,7 +10,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
         }
     };
 
-   	$('.materialboxed').materialbox();
+    // modal init
 	$('.modal').modal();
 
     let inputFrom = document.getElementById('parkSearch');
@@ -49,7 +49,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
                     lng: $scope.lng
                 },
                 radius: radius,
-                query: "dog parks in"
+                query: "dog parks"
             }, processResults);
             function processResults(results, status, pagination) {
                 var locations;
@@ -122,7 +122,7 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
 
             (function(marker, data) {
 
-                google.maps.event.addListener(marker, "click", function(e) {
+				google.maps.event.addListener(marker, "click", function(e) {
 
                     infoWindow.setContent(result.name);
                     infoWindow.open(map, marker);
@@ -130,37 +130,32 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
             })(marker, data);
             $scope.$apply();
         }
-    
-
-    var infoGeoWindow = new google.maps.InfoWindow({map: map});
-    // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoGeoWindow.setPosition(pos);
-            infoGeoWindow.setContent('YOU ARE HERE!');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoGeoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoGeoWindow, map.getCenter());
-        }
+		var infoGeoWindow = new google.maps.InfoWindow({map: map});
+		if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+		var pos = {
+			lat: position.coords.latitude,
+			lng: position.coords.longitude
+		};
+			infoGeoWindow.setPosition(pos);
+			infoGeoWindow.setContent("You Are Here");
+			map.setCenter(pos);
+		}, function() {
+			handleLocationError(true, infoGeoWindow, map.getCenter());
+			});
+		} else {
+			// Browser doesn't support Geolocation
+			handleLocationError(false, infoGeoWindow, map.getCenter());
+		}
 
 	}
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      }
-      
+	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+		infoWindow.setPosition(pos);
+		infoWindow.setContent(browserHasGeolocation ?
+		'Error: The Geolocation service failed.' :
+		'Error: Your browser doesn\'t support geolocation.');
+	}
 
     $scope.addFavorite = function(dog) {
 		dog.uid = $rootScope.user.uid;
@@ -177,13 +172,10 @@ app.controller('SearchCtrl', function($scope, $location, $rootScope, FavoriteFac
     initializeOriginalCoordinates();
 
     function initializeOriginalCoordinates () {
-    navigator.geolocation.getCurrentPosition(function(position) {
-              $scope.lat = position.coords.latitude;
-              $scope.lng = position.coords.longitude;
-              initialize();
+    	navigator.geolocation.getCurrentPosition(function(position) {
+			$scope.lat = position.coords.latitude;
+			$scope.lng = position.coords.longitude;
+			initialize();
     });
 }
-
-
-
 });

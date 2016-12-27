@@ -3,15 +3,8 @@
     <nav>
         <div class="nav-wrapper dk-blue">
             <a href="#!" class="brand-logo center uppercase-font-style">off leash</a>
-            <a href data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down" ng-repeat="nav in navItems">
+            <ul class="right" ng-repeat="nav in navItems">
                 <li><a href="{{nav.url}}">{{nav.name}}</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="#/contacts">Friends</a></li>
-                <li><a href="#/favorites">Favorites</a></li>
-                <li><a href="#/search">Search</a></li>
-                <li><a href="#/logout">Logout</a></li>
             </ul>
             <div class="chip">
                 <img src="{{user.dogimg}}" alt="Contact Person">
@@ -40,7 +33,7 @@
                 <div class="dot dot4"></div>
                 <div class="tag"></div>
             </div>
-            <div class="stomach" onmouseover="Materialize.toast('bark', 4000, 'rounded')">
+            <div class="stomach" onmouseover="Materialize.toast('BORK BORK', 4000, 'rounded')">
             </div>
             <div class="legs">
                 <div class="left"></div>

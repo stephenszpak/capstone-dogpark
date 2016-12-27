@@ -22,7 +22,6 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 		});
 	};
 
-
 	let getUser = (userId) => {
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
@@ -57,7 +56,6 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 			});
 		});
 	};
-
 
 	return{
 		addUser:addUser,

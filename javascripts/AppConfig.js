@@ -25,8 +25,6 @@ app.run(function($rootScope, $location, FIREBASE_CONFIG, AuthFactory) {
 	});
 });
 
-
-
 app.config(function($routeProvider, $httpProvider) {
 	$routeProvider
 		.when('/auth', {

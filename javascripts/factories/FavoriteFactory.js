@@ -36,7 +36,6 @@ app.factory("FavoriteFactory", function($q, $http, FIREBASE_CONFIG) {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/favorites.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(response) {
 				let favorites = [];
-				console.log("butts", favorites);
 				Object.keys(response).forEach(function(key) {
 					response[key].id = key;
 					favorites.push(response[key]);

@@ -4,7 +4,6 @@ app.controller('FavoriteCtrl', function($scope, $rootScope, $filter, $routeParam
 	$scope.favoriteList = {};
 	$scope.selectedPlace = {};
 
-
 	let showFavorites = function() {
 		FavoriteFactory.getFavorites($rootScope.user.uid).then(function(data) {
 			console.log("favroites", data);
