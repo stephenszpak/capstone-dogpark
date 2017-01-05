@@ -33,13 +33,12 @@
 <div id="details" class="modal model-fixed-footer mod-height">
     <div id="viewdetails" class="modal-content">
         <h4>{{selectedPlace.title}}</h4>
-        <br>
-        <p>Address: {{selectedPlace.address}}</p>
-        <br>
-        <p>Rating: {{selectedPlace.rating}}</p>
+        <p><h6>Address: </h6>{{selectedPlace.address}}</p>
+        <p><h6>Rating: </h6>{{selectedPlace.rating}}</p>
     </div>
-    <img src="{{selectedPlace.photo}}">
+    <img class="modal-img" src="{{selectedPlace.photo}}">
     <div class="modal-footer">
+        <h5>Reviews</h5>
         <div id="reviews" class="review-box">
             <ul>
                 <li class="reviews" ng-repeat="review in selectedPlace.reviews">"{{review.text}} ({{review.rating}}/5)" <br><strong>-- {{review.author_name}}</strong>, {{review.relative_time_description}}</li>

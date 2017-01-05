@@ -7,3 +7,6 @@
 * http-server
 
 social share for twitter facebook share
+
+
+dog animation - https://codepen.io/narendrashetty/pen/YwypNo

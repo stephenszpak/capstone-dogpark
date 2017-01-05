@@ -7,7 +7,7 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
     // modal init
     $('.modal').modal();
 
-    
+
 
     function getContacts() {
         ContactsFactory.getContacts($rootScope.user.uid).then(function(usersContacts) {
@@ -36,13 +36,14 @@ app.controller("ContactCtrl", function($scope, $rootScope, ContactsFactory, User
 
     $scope.editContact = function(contact) {
         ContactsFactory.editContact(contact).then(function() {
+            alertify.success('Contact Updated');
             getContacts();
         });
     };
 
     $scope.editUser = function(user) {
         UserFactory.editUser($rootScope.user.uid, user).then(function(data) {
-            alertify.success('Contact Updated');
+            
         });
     };
 
